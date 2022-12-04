@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package synch_simulator;
 
-/**
- *
- * @author yas se
- */
-public class Consumer {
+public class Consumer extends Thread{ 
+    /* This is a Consumer Class , Here the balls are taken out of the box */
     
+    /*Override Method , which the Consuming process is carried out*/
+     @Override
+   public void run() {
+        System.out.println ("Consumer !!");
+   System.out.println(Shared_Data.numberOfBalls);
+   System.out.println(Shared_Data.TheWeightOfBox());
+   Shared_Data.numberOfBalls --;
+   System.out.println(Shared_Data.numberOfBalls);
+   System.out.println(Shared_Data.TheWeightOfBox());
+  }
 }

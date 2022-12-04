@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package synch_simulator;
 
-/**
- *
- * @author yas se
- */
 public class Shared_Data {
+    /* This Class contains Shared Data Between All Threads */
+    
+    /* As we said , we have a box contains Balls  , here some Basic information about this Box */
+    public static int numberOfBalls=10;
+    public static double weightPerBall= 7.25748;
+    public static double TheWeightOfBox ()
+    {
+        return numberOfBalls *weightPerBall;
+    }
     
 }
