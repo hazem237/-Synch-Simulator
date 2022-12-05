@@ -1,8 +1,12 @@
 package synch_simulator;
 
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 class Thread_Factory extends Thread {
+    
+     Random rand = new Random();
+     int rand_time = rand.nextInt(16);
 
     Semaphore lock;
     String threadName;
@@ -27,7 +31,7 @@ class Thread_Factory extends Thread {
                 // Now, accessing the shared resource.
                 // other waiting threads will wait, until this 
                 // thread release the lock
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < 10; i++) {
                     Shared_Data.numberOfBalls++;
                     System.out.println(threadName + ": " + Shared_Data.numberOfBalls);
                 }
@@ -49,7 +53,7 @@ class Thread_Factory extends Thread {
                 // Now, accessing the shared resource.
                 // other waiting threads will wait, until this 
                 // thread release the lock
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < 10; i++) {
                     Shared_Data.numberOfBalls--;
                     System.out.println(threadName + ": " + Shared_Data.numberOfBalls);
                 }
