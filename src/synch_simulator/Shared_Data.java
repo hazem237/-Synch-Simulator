@@ -1,4 +1,5 @@
 package synch_simulator;
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class Shared_Data {
@@ -8,6 +9,9 @@ public class Shared_Data {
  /* As we said , we have a box contains Balls  , here some Basic information about this Box */
     public static int numberOfBalls = 10;
     public static double weightPerBall = 7.25;
+    
+        public static Random rand = new Random();
+        public static int rand_time = rand.nextInt(9);
     
      public static Semaphore lock = new Semaphore(1);
 
